@@ -164,9 +164,9 @@ class ReactComp extends Component {
         iterator.addDays(1);
       }
     }
-    const scrollPosition = reservations.length;
+    const scrollPosition = 0;
     const iterator = props.selectedDay.clone();
-    for (let i = 0; i < 31; i++) {
+    for (let i = 0; i <= 0; i++) {
       const res = this.getReservationsForDay(iterator, props);
       if (res) {
         reservations = reservations.concat(res);
@@ -174,14 +174,15 @@ class ReactComp extends Component {
       iterator.addDays(1);
     }
 
+    console.log('reservations', this.props)
     return {reservations, scrollPosition};
   }
 
   render() {
-    if (!this.props.reservations || !this.props.reservations[this.props.selectedDay.toString('yyyy-MM-dd')]) {
-      if (this.props.renderEmptyData) {
-        return this.props.renderEmptyData();
-      }
+    if ( !this.props.reservations || !this.props.reservations[this.props.selectedDay.toString('yyyy-MM-dd')] ) {
+      // if (this.props.renderEmptyData) {
+      //   return this.props.renderEmptyData();
+      // }
       return (<ActivityIndicator style={{marginTop: 80}}/>);
     }
     return (

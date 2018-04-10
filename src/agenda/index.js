@@ -4,6 +4,7 @@ import {
   View,
   Dimensions,
   Animated,
+  SafeAreaView,
   ViewPropTypes,
 } from 'react-native';
 import PropTypes from 'prop-types';
@@ -268,7 +269,7 @@ export default class AgendaView extends Component {
         rowHasChanged={this.props.rowHasChanged}
         renderItem={this.props.renderItem}
         renderDay={this.props.renderDay}
-        renderEmptyDate={this.props.renderEmptyDate}
+        renderEmptyDate={(this.props.renderEmptyDate)}
         reservations={this.props.items}
         selectedDay={this.state.selectedDay}
         renderEmptyData = {this.props.renderEmptyData}
