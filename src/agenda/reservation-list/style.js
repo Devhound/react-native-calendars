@@ -22,7 +22,7 @@ export default function styleConstructor(theme = {}) {
       backgroundColor: 'rgba(0,0,0,0)'
     },
     day: {
-      width: 63,
+      flex: 1,
       alignItems: 'center',
       justifyContent: 'flex-start',
       marginTop: 32
